@@ -1,0 +1,28 @@
+accordion {
+    
+        .ion-card {
+            padding:0;
+            margin:0;
+        }
+        .card-header{
+            background-color: yellow;
+            color: #fff;
+            padding:0;
+        }
+        .card-content {
+            padding: 0px 16px; 
+            max-height: 0px;
+        }
+       .card-md {
+           width:100%;
+           margin:0;
+           margin-bottom:10px;
+       }
+       .card-ios {
+        width:100%;
+        margin:0;
+        margin-bottom:10px;
+     }
+     .card-md .item-inner { border-bottom: 1px solid #dedede !important; }
+     .card-ios .item-inner { border-bottom: 1px solid #dedede !important; }
+    }

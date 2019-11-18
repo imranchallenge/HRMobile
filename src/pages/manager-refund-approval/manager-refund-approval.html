@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Refund Approval</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+<ion-content padding>
+    <form [formGroup]="authForm" (ngSubmit)="submitForm(authForm.value)">
+        <ion-grid padding>
+            <ion-row>
+                <ion-col><strong>Employee</strong></ion-col>
+            </ion-row>
+            <ion-row> 
+                  <ion-col>{{requestEmployee.name}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><strong>Voucher</strong></ion-col>
+            </ion-row>
+            <ion-row> 
+                  <ion-col>{{requestEmployee.voucher}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><strong>Value</strong></ion-col>
+            </ion-row>
+            <ion-row> 
+                  <ion-col>{{requestEmployee.value}}</ion-col>
+            </ion-row>
+            <ion-row>
+                    <ion-col><strong>Description</strong></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>{{requestEmployee.description}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><strong>Employee Comments</strong></ion-col>
+            </ion-row>
+            <ion-row>
+               <ion-col>{{requestEmployee.comments}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><strong></strong></ion-col>
+            </ion-row>
+            <ion-row>
+               <ion-col></ion-col>
+            </ion-row>
+           <ion-row>
+              <ion-col><strong>Manager Comments</strong></ion-col>
+            </ion-row>
+           <ion-row>
+                  <ion-col>
+                      <ion-item>
+                          <ion-input type="text" value="" [formControl]="authForm.controls['managerComments']" ></ion-input>
+                      </ion-item>
+                  </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><strong>Refund Status</strong></ion-col>
+            </ion-row>
+              <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label>Status</ion-label>
+                        <ion-select [formControl]="authForm.controls['status']">
+                            <ion-option *ngFor="let type of statusTypes" [value]="type.value">{{type.text}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col><button type="submit" ion-button full [disabled]="!(authForm.valid)" class="submit-btn">Submit</button></ion-col>
+              </ion-row>  
+        </ion-grid> 
+    </form>
+  </ion-content>

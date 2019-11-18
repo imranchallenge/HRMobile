@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Update PD</ion-title>
+    <ion-buttons clear ion-button icon-only end>
+          <button ion-button (click)="landingPage()">
+              <ion-icon name="home"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <img [src]="lastImage" style="width: 5%" [hidden]="lastImage === null">
+        <button ion-button full color="primary" (click)="presentActionSheet()">Personal Photo</button>
+     </ion-item>
+    <form [formGroup]="authForm" (ngSubmit)="submitForm(authForm.value)">
+      <accordion title="Personal Details">
+        <ion-item>
+            <ion-label floating>Date of Birth</ion-label>
+            <ion-datetime displayFormat="MMM DD, YYYY" 
+            [(ngModel)]="personalDetailPD.dob" [formControl]="authForm.controls['dob']"></ion-datetime>         
+        </ion-item>
+        <ion-item>
+            <ion-label>Marital Status</ion-label>
+            <ion-select [(ngModel)]="personalDetailPD.maritalStatus"  [formControl]="authForm.controls['maritalStatus']">
+                <ion-option *ngFor="let type of maritalStatus" [value]="type.value">{{type.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Marital Date</ion-label>
+            <ion-datetime displayFormat="MMM DD, YYYY" 
+            [(ngModel)]="personalDetailPD.maritalDate" [formControl]="authForm.controls['maritalDate']"></ion-datetime>         
+        </ion-item>
+        <ion-item>
+            <ion-label>Disabled</ion-label>
+            <ion-select [(ngModel)]="personalDetailPD.disabled" [formControl]="authForm.controls['disabled']">
+                <ion-option *ngFor="let type of disabled" [value]="type.value">{{type.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Type of Disability</ion-label>
+            <ion-select [(ngModel)]="personalDetailPD.typeofDisability"  [formControl]="authForm.controls['typeofDisability']">
+                <ion-option *ngFor="let type of disability" [value]="type.value">{{type.text}}</ion-option>
+            </ion-select>
+        </ion-item>
+      </accordion>
+      <accordion title="Contact Details">
+        <ion-item>
+            <ion-label floating>Home Contact</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.homeTelephone" [formControl]="authForm.controls['homeTelephone']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Work Contact</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.workTelephone" [formControl]="authForm.controls['workTelephone']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Mobile</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.mobile" [formControl]="authForm.controls['mobile']" ></ion-input>
+        </ion-item>
+      </accordion>
+      <accordion title="Address Details">
+        <ion-item>
+            <ion-label floating>Physical Address Line 1</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.physicalAddress1" [formControl]="authForm.controls['physicalAddress1']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Physical Address Line 2</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.physicalAddress2" [formControl]="authForm.controls['physicalAddress2']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Physical Address Line 3</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.physicalAddress3" [formControl]="authForm.controls['physicalAddress3']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Physical Address Line 4</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.physicalAddress4" [formControl]="authForm.controls['physicalAddress4']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Physical Address Postal Code</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.physicalAddressPostalCode" [formControl]="authForm.controls['physicalAddressPostalCode']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Physical Address City</ion-label>
+            <ion-input type="text"  [(ngModel)]="personalDetailPD.physicalAddressCity" [formControl]="authForm.controls['physicalAddressCity']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Physical Address Country</ion-label>
+            <ion-input type="text"  [(ngModel)]="personalDetailPD.physicalAddressCountry" [formControl]="authForm.controls['physicalAddressCountry']" ></ion-input>
+        </ion-item>
+      </accordion>
+      <accordion title="Emergency Contact">
+        <ion-item>
+            <ion-label class="emergencyContact"><strong>Emergency Contact 1:</strong></ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text"  [(ngModel)]="personalDetailPD.emergencyContact1Name" [formControl]="authForm.controls['emergencyContact1Name']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Relationship</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.emergencyContact1Relationship" [formControl]="authForm.controls['emergencyContact1Relationship']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Contact Number</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.emergencyContact1Number" [formControl]="authForm.controls['emergencyContact1Number']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label class="emergencyContact"><strong>Emergency Contact 2:</strong></ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.emergencyContact2Name" [formControl]="authForm.controls['emergencyContact2Name']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Relationship</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.emergencyContact2Relationship" [formControl]="authForm.controls['emergencyContact2Relationship']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Contact Number</ion-label>
+            <ion-input type="text" [(ngModel)]="personalDetailPD.emergencyContact2Number" [formControl]="authForm.controls['emergencyContact2Number']" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label></ion-label>
+        </ion-item>
+      </accordion>
+      <button type="submit" ion-button full [disabled]="!authForm.valid" class="submit-btn">Submit</button>
+    </form>
+   
+</ion-content>

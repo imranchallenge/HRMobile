@@ -1,0 +1,24 @@
+page-leave-request {
+  
+	.error-box {
+		color: red;
+	}
+	
+	.error-border {
+		color: red;
+	}
+	.submit-btn {
+		background:color($colors,secondary);
+		border-radius: 30px !important;
+		border: 1px solid #ffffff;
+	  }
+	  
+	 .card-header{
+        color: #fff;
+		padding:0;
+    }
+    .card-content {
+        padding: 0px 16px; 
+        max-height: 0px;
+    }
+}

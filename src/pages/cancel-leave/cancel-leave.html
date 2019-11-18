@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cancel Leave</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="authForm" (ngSubmit)="submitForm(authForm.value)">
+    <ion-grid padding>
+        <ion-row>
+            <ion-col><strong>Action Date</strong></ion-col>
+        </ion-row>
+        <ion-row> 
+              <ion-col>{{inbox.reqDate}}</ion-col>
+        </ion-row>
+        <ion-row>
+                <ion-col><strong>Description</strong></ion-col>
+          </ion-row>
+       <ion-row>
+         <ion-col class="description">{{inbox.description}}</ion-col>
+       </ion-row>
+       <ion-row>
+          <ion-col><strong>No of Days</strong></ion-col>
+        </ion-row>
+       <ion-row>
+          <ion-col>{{inbox.noofDays}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col><strong>Comments</strong></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-input type="text" [formControl]="authForm.controls['comments']" ></ion-input>
+                </ion-item>
+            </ion-col>
+           </ion-row>
+          <ion-row>
+              <ion-col><button type="submit" ion-button full [disabled]="!(authForm.valid)" class="submit-btn">Cancel Leave</button></ion-col>
+          </ion-row>  
+    </ion-grid> 
+</form>
+</ion-content>

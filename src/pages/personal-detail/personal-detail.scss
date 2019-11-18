@@ -1,0 +1,22 @@
+page-personal-detail {
+    .error-box {
+		color: red;
+	}
+	
+	.error-border {
+		color: red;
+    }
+   
+    .submit-btn {
+		background:color($colors,secondary);
+		border-radius: 30px !important;
+		border: 1px solid #ffffff;
+		}
+		.emergencyContact {
+			background-color:color($colors,secondary);
+			color:#ffffff;
+			height: 30px;
+			padding-left: 10px;
+			padding-top:5px;
+		}
+}

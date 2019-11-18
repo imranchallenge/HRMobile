@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inbox</ion-title>
+    <ion-buttons clear ion-button icon-only end>
+        <button ion-button (click)="landingPage()">
+            <ion-icon name="home"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of inboxItems" (click)="itemTapped($event, item)">
+        <ion-icon name="mail" color='danger' item-left></ion-icon>  
+      <ion-grid>
+            <ion-row>
+                <ion-col><strong>Type:</strong></ion-col>
+                <ion-col>{{item?.type}}</ion-col>
+              </ion-row>
+           <ion-row>
+             <ion-col><strong>Req.By:</strong></ion-col>
+             <ion-col>{{item?.reqBy}}</ion-col>
+           </ion-row>
+           <ion-row>
+              <ion-col><strong>Trans.Date:</strong></ion-col>
+              <ion-col>{{item?.reqDate}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col><strong>Status:</strong></ion-col>
+                <ion-col>{{item?.status}}</ion-col>
+              </ion-row>
+        </ion-grid>
+    </button>
+  </ion-list>
+</ion-content>

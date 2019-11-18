@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Refund Request</ion-title>
+      <ion-buttons clear ion-button icon-only end>
+            <button ion-button (click)="landingPage()">
+                <ion-icon name="home"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+        <ion-item>
+            <img [src]="lastImage" style="width: 5%" [hidden]="lastImage === null">
+            <button ion-button full color="primary" (click)="presentActionSheet()">Attachment</button>
+        </ion-item>
+    <form [formGroup]="authForm" (ngSubmit)="submitForm(authForm.value)">
+        <ion-item>
+            <ion-label>Type of Earning/Refund</ion-label>
+            <ion-select [formControl]="authForm.controls['refundType']">
+                <ion-option *ngFor="let type of refundTypes" [value]="type">{{type}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Transaction Date</ion-label>
+            <ion-datetime displayFormat="MMM DD, YYYY" 
+            [(ngModel)]="todayStartDate" [formControl]="authForm.controls['transactionDate']"></ion-datetime>         
+        </ion-item>
+
+        <div class="error-box" *ngIf="authForm.controls['transactionDate'].hasError('required') && authForm.controls['transactionDate'].touched">* Transaction Date is required!</div>
+        <ion-item>
+            <ion-label floating>Value</ion-label>
+            <ion-input type="number" value="" [formControl]="authForm.controls['value']" ></ion-input>
+        </ion-item>
+        <div class="error-box" *ngIf="authForm.controls['value'].hasError('required') && authForm.controls['value'].touched">* value is required!</div>
+       
+        <ion-item>
+            <ion-label floating>No of Expenses</ion-label>
+            <ion-input type="number" value="" [formControl]="authForm.controls['noOfExpenses']" ></ion-input>
+        </ion-item>
+        <div class="error-box" *ngIf="authForm.controls['noOfExpenses'].hasError('required') && authForm.controls['noOfExpenses'].touched">* No of Expenses is required!</div>
+
+        <ion-item>
+            <ion-label floating>Description</ion-label>
+            <ion-input type="text" value="" [formControl]="authForm.controls['description']" ></ion-input>
+        </ion-item>
+        <div class="error-box" *ngIf="authForm.controls['description'].hasError('required') && authForm.controls['description'].touched">* Description is required!</div>
+       <br/>
+		<button type="submit" ion-button full [disabled]="!(authForm.valid)" class="submit-btn">Submit</button>
+    </form>
+</ion-content>

@@ -1,0 +1,79 @@
+<!--
+  Generated template for the PayrollDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Payroll Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+             <h5>Interval</h5>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+               {{interval}}
+           </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h5>Employee Name</h5>
+           </ion-col>
+          </ion-row>
+          <ion-row>
+           <ion-col>
+              {{employeeName}}
+           </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+             <h6>Basic Salary</h6>
+            </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col>
+                {{basicSalary}}
+            </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col>
+             <h5>Total Earnings</h5>
+            </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col>
+                {{totalEarnings}}
+            </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col>
+             <h5>Total Deductions</h5>
+            </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col>
+                {{totalDeductions}}
+            </ion-col>
+           </ion-row>
+           <ion-row>
+              <ion-col>
+               <h5>Net Pay</h5>
+              </ion-col>
+             </ion-row>
+             <ion-row>
+              <ion-col>
+                  {{netPay}}
+              </ion-col>
+             </ion-row>
+      </ion-grid>
+</ion-content>

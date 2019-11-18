@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Buzzers</ion-title>
+      <ion-buttons clear ion-button icon-only end>
+          <button ion-button (click)="landingPage()">
+              <ion-icon name="home"></ion-icon>
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let item of buzzerItems" (click)="itemTapped($event, item)">
+          <ion-grid [ngClass]="item.read === 0 ? 'grid-color' : ''">
+              <ion-row>
+                  <ion-col class="col-font-size" col-2><strong>Type:</strong></ion-col>
+                  <ion-col class="col-font-size">{{item.type}}</ion-col>
+                </ion-row>
+             <ion-row>
+               <ion-col class="col-font-size" col-2><strong>Detail:</strong></ion-col>
+               <ion-col class="col-font-size" text-wrap>{{item.detail | truncate:[20, '...']}}</ion-col>
+             </ion-row>
+             <!--
+             <ion-row>
+                <ion-col class="col-font-size" col-2><strong>Date:</strong></ion-col>
+                <ion-col class="col-font-size" text-wrap>{{item.reminderDate}}</ion-col>
+              </ion-row>
+            -->
+          </ion-grid>
+      </button>
+    </ion-list>
+  </ion-content>

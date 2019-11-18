@@ -1,0 +1,17 @@
+page-manager-refund-approval {
+    .error-box {
+		color: red;
+	}
+	
+	.error-border {
+		color: red;
+	}
+	.submit-btn {
+		background:color($colors,secondary);
+		border-radius: 30px !important;
+		border: 1px solid #ffffff;
+	  }
+  .description {
+      font-size:12px;
+  }
+}

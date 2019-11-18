@@ -1,0 +1,71 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.scroll-content {
+    overflow-y: auto !important;
+}    
+
+.menu-inner .item {
+    background-color: color($colors,gulfhr);
+    color: #fff;
+  }
+  
+  
+  .menu-inner > ion-header, 
+  .menu-inner > ion-content, 
+  .menu-inner > ion-footer {
+    background-color: color($colors,gulfhr);
+ 
+  }
+  
+  .toolbar-title {
+    color : #fff;
+  }
+
+  .hide-card {
+    -webkit-box-shadow: none!important;
+    background-color: color($colors,gulfhr);
+    color : #fff;
+  }
+  .hide-card p {
+    color : #fff;
+  }
+  .hide-card hr {
+    background-color: #fff;
+  }
+  .hide-card h2 {
+    color : #fff;
+    font-size:20px;
+  }
+  .custom-avatar {
+    border: 2px solid #fff;
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #notifications-badge {
+    border-radius: 100%;
+  }
+  .card-md .item-md.item-block:not(:last-child) .item-inner {
+    border-bottom: 1px solid #dedede;
+  }
+  
+  .card-md .item-md.item-block:not(.item-input):not(.item-select):not(.item-radio):not(.item-checkbox) .item-inner {
+    border: 0;
+  }

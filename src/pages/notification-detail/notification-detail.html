@@ -1,0 +1,49 @@
+<!--
+  Generated template for the NotificationDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Buzzer Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+             <h5>Type</h5>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              {{buzzer.type}}
+         </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h5>Description</h5>
+         </ion-col>
+        </ion-row>
+        <ion-row>
+         <ion-col>
+            {{buzzer.detail}}
+         </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+           <h6>Date</h6>
+          </ion-col>
+         </ion-row>
+         <ion-row>
+          <ion-col>
+              {{buzzer.reminderDate}}
+          </ion-col>
+         </ion-row>
+      </ion-grid>
+</ion-content>

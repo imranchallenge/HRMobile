@@ -1,0 +1,14 @@
+page-document-request {
+    .error-box {
+		color: red;
+	}
+	
+	.error-border {
+		color: red;
+	}
+	.submit-btn {
+		background:color($colors,secondary);
+		border-radius: 30px !important;
+		border: 1px solid #ffffff;
+	  }
+}

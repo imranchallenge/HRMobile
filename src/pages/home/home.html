@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+    <ion-buttons clear ion-button icon-only end>
+        <button ion-button (click)="landingPage()">
+            <ion-icon name="home"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    
+      <ion-card-header>
+        <strong>Visa Details</strong>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+               <p padding-right>Number:</p>
+            </ion-col>
+            <ion-col>
+              <span> {{ profileMD.visaNumber }} </span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p padding-right>Start Date:</p>
+           </ion-col>
+           <ion-col>
+              {{ profileMD.visaStartDate }}
+            </ion-col> 
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p padding-right>End Date:</p>
+           </ion-col>
+           <ion-col>
+              {{ profileMD.visaEndDate }}
+           </ion-col>
+           </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+          <strong>Passport Details</strong>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                 <p padding-right>Number:</p>
+              </ion-col>
+              <ion-col>
+                  {{ profileMD.passportNumber }}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p padding-right>Issue Date:</p>
+             </ion-col>
+             <ion-col>
+                {{ profileMD.passportIssueDate }}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p padding-right>Expiry Date:</p>
+             </ion-col>
+             <ion-col>
+                {{ profileMD.passportExpiryDate }}
+             </ion-col>
+             </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <strong>Leave Details</strong>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                 <p padding-right>Annual:</p>
+              </ion-col>
+              <ion-col>
+                  {{ profileMD.annualLeave }}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p padding-right>Sick:</p>
+             </ion-col>
+             <ion-col>
+                {{ profileMD.sickLeave }}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

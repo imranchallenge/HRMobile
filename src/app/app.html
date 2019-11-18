@@ -1,0 +1,32 @@
+<ion-menu [content]="content" (ionOpen)="menuOpened()">
+
+  <ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-card text-center class="hide-card">
+      <img [src]="picture" onError="src='assets/person.jpg'" class="custom-avatar" />
+      <h2>{{name}}</h2>
+    </ion-card>
+    <br/>
+    <ion-list>
+      <div *ngFor="let p of pages">
+        <button menuClose ion-item (click)="openPage(p)" *ngIf="p.display || p.title === 'Manager Approval' || p.title === 'Logout'">
+               <ion-icon [name]="p?.icon" color='light' item-left></ion-icon>
+                 {{ p?.title }}
+                <span *ngIf="p.title === 'Buzzers'">
+                  <ion-badge id="notifications-badge" color="primary">{{unRead}}</ion-badge> 
+                </span>
+                <span *ngIf="p.title === 'Manager Approval'">
+                  <ion-badge id="notifications-badge" color="primary">{{buzzerEmployeeManagerRequestCount}}</ion-badge> 
+                </span>
+       </button>
+      </div>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

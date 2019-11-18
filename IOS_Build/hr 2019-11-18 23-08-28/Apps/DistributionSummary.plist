@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>hr.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>C940357A34D4849DBA8D6C4BC52E80103A1EDC47</string>
+				<key>dateExpires</key>
+				<string>11/17/20</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>7HYS2WGT45.com.gulf.hr1</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>7HYS2WGT45</string>
+			</dict>
+			<key>name</key>
+			<string>hr.app</string>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>7HYS2WGT45</string>
+				<key>name</key>
+				<string>GULF SOLUTIONS GROUP FZ-LLC</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
